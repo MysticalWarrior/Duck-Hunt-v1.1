@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,8 +46,16 @@ namespace Duck_Hunt_1._1
         private void GameTimer_Tick(object sender, EventArgs e)
         {
             counter++;
-            //this.Title = counter.ToString();
+            this.Title = counter.ToString();
             duck.Move(counter);
+        }
+
+        private void Window_KeyDown(object sender, EventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.Enter))
+            {
+                duck.Kill(Canvas);
+            }
         }
     }
 }
